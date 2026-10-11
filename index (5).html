@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Purva Dattatray Adhav, Computer Science and Engineering student at Kolhapur Institute of Technology, Kolhapur.">
+<title>Purva Dattatray Adhav | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F3F6FB; --paper:#FFFFFF; --ink:#0E1B33; --muted:#4A5873; --line:#D5DDEA;
+  --word:#1F5FBF; --excel:#1B7A4E; --ppt:#B93E1B; --navy:#0E1B33;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--ground);color:var(--ink);line-height:1.65;font-size:17px}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-0.02em}
+a{color:inherit}
+.container{width:min(1120px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--word);outline-offset:3px;border-radius:4px}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.navbar{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;text-decoration:none}
+.logo span{color:var(--ppt)}
+.nav-links{display:flex;gap:26px;list-style:none;font-size:.95rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);border-bottom-color:var(--word)}
+.menu-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:8px;width:44px;height:44px;font-size:1.3rem;cursor:pointer;color:var(--ink)}
+
+/* Hero */
+.hero{padding:88px 0 96px}
+.hero-content{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800}
+.hero h1 span{display:block;color:var(--word)}
+.hero h2{font-size:1.35rem;font-weight:600;margin:22px 0 8px}
+.hero-subtitle{color:var(--excel);font-weight:600;margin-bottom:18px}
+.hero-text p{max-width:56ch;color:var(--muted)}
+.hero-text .hero-subtitle{color:var(--excel)}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:10px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.primary:hover{background:var(--word);transform:translateY(-2px)}
+.btn.secondary{border:2px solid var(--navy)}
+.btn.secondary:hover{background:var(--navy);color:#fff}
+
+/* Hero stack: the one memorable moment */
+.doc-stack{position:relative;height:400px}
+.doc{position:absolute;width:76%;background:var(--paper);border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(14,27,51,.45);overflow:hidden;opacity:0;transform:translateY(24px) rotate(var(--r));animation:land .7s cubic-bezier(.2,.8,.2,1) forwards}
+.doc header{display:flex;align-items:center;gap:10px;padding:10px 14px;color:#fff;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem}
+.doc .body{padding:16px;display:grid;gap:8px}
+.bar{height:8px;border-radius:4px;background:var(--line)}
+.doc.word{--r:-4deg;top:0;left:0;animation-delay:.1s}
+.doc.word header{background:var(--word)}
+.doc.excel{--r:3deg;top:120px;right:0;animation-delay:.35s}
+.doc.excel header{background:var(--excel)}
+.doc.ppt{--r:-2deg;top:250px;left:6%;animation-delay:.6s}
+.doc.ppt header{background:var(--ppt)}
+.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.cells i{display:block;height:16px;background:#E3F1EA;border-radius:3px}
+.cells i:nth-child(5n){background:#BFE0CF}
+.slide{height:64px;border-radius:6px;background:linear-gradient(90deg,#F6D9CF 0 38%,#FBEDE8 38% 100%)}
+@keyframes land{to{opacity:1;transform:translateY(0) rotate(var(--r))}}
+
+/* Sections */
+.section{padding:88px 0}
+.section.alt{background:var(--paper);border-block:1px solid var(--line)}
+.section-heading{margin-bottom:44px;max-width:640px}
+.section-heading h2{font-size:clamp(2rem,4vw,2.8rem)}
+.section-heading p{margin-top:12px;color:var(--muted)}
+
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+.about-grid p{color:var(--muted);margin-bottom:16px;max-width:62ch}
+.info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px}
+.info-card div{padding:16px 0;border-bottom:1px solid var(--line)}
+.info-card div:last-child{border-bottom:0}
+.info-card strong{display:block;font-family:'Sora',sans-serif;font-size:.85rem;color:var(--word)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.skill-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.alt .skill-card{background:var(--ground)}
+.skill-card h3{font-size:1.1rem;margin-bottom:10px}
+.skill-card p{color:var(--muted);font-size:.97rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-size:.85rem;font-weight:500;padding:5px 12px;border-radius:99px;background:#E4ECF9;color:#17428A}
+
+/* Office tabs: responds to the person's click */
+.office{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:stretch}
+.tablist{display:grid;gap:10px;align-content:start}
+.tab{display:flex;align-items:center;gap:12px;text-align:left;min-height:56px;padding:0 18px;border:1px solid var(--line);border-radius:12px;background:var(--paper);font:600 1rem 'Sora',sans-serif;color:var(--ink);cursor:pointer}
+.tab::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--c)}
+.tab[aria-selected="true"]{background:var(--c);color:#fff;border-color:var(--c)}
+.tab[aria-selected="true"]::before{background:#fff}
+.panel{background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:var(--radius);padding:34px}
+.panel[hidden]{display:none}
+.panel h3{font-size:1.6rem;margin-bottom:12px}
+.panel p{color:var(--muted);max-width:60ch}
+.panel ul{margin:18px 0 0 20px;color:var(--ink)}
+.panel li{margin-bottom:6px}
+
+/* Timeline */
+.timeline{border-left:3px solid var(--word);padding-left:28px;max-width:640px}
+.timeline-item{position:relative}
+.timeline-dot{position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:4px solid var(--word)}
+.timeline-content span{font-weight:600;color:var(--word);font-size:.92rem}
+.timeline-content h3{font-size:1.4rem;margin:6px 0 2px}
+.timeline-content h4{font-size:1.05rem;font-weight:600;color:var(--excel);margin-bottom:6px}
+.timeline-content p{color:var(--muted)}
+
+/* Projects */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.project-card{background:var(--navy);color:#E8EEF9;border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;border-top:6px solid var(--c,var(--word))}
+.project-card:nth-child(2){--c:var(--excel)}
+.project-card:nth-child(3){--c:var(--ppt)}
+.project-card h3{color:#fff;font-size:1.35rem;margin-bottom:12px}
+.project-card p{color:#C3CFE6;font-size:.98rem;flex:1}
+.project-card .tags span{background:rgba(255,255,255,.12);color:#fff}
+
+/* Certificates */
+.certificate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.certificate-card{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--word);border-radius:var(--radius);padding:22px 24px}
+.certificate-card:nth-child(3n+2){border-left-color:var(--excel)}
+.certificate-card:nth-child(3n){border-left-color:var(--ppt)}
+.certificate-card h3{font-size:1.05rem;margin-bottom:6px}
+.certificate-card p{color:var(--muted);font-size:.95rem}
+.certificate-card a{display:inline-block;margin-top:10px;font-weight:600;color:var(--word)}
+.certificate-card span{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--muted)}
+
+/* Objective */
+.objective{padding:0 0 88px}
+.objective-box{background:var(--word);color:#fff;border-radius:20px;padding:64px 56px}
+.objective-box h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px}
+.objective-box p{max-width:62ch;color:#E6EEFB;font-size:1.1rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.contact-card{background:var(--ground);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact-card h3{font-size:1.1rem;margin-bottom:10px}
+.contact-card a{font-weight:600;color:var(--word);word-break:break-word}
+
+footer{background:var(--navy);color:#C3CFE6;padding:30px 0;font-size:.95rem}
+.footer-content{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+footer a{color:#fff}
+
+@media (max-width:860px){
+  .hero-content,.about-grid,.office{grid-template-columns:1fr}
+  .doc-stack{height:380px;max-width:420px}
+  .menu-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ground);border-bottom:1px solid var(--line);padding:8px 20px 16px}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:12px 0}
+  .tablist{grid-template-columns:repeat(3,1fr)}
+  .tab{padding:0 12px;font-size:.9rem}
+  .objective-box{padding:44px 28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .doc{animation:none;opacity:1;transform:rotate(var(--r))}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <nav class="navbar container" aria-label="Main">
+    <a href="#home" class="logo">Purva<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#office">Office</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Purva <span>Dattatray Adhav</span></h1>
+      <h2>Computer Science and Engineering student</h2>
+      <p class="hero-subtitle">Aspiring software developer. C and C++ programmer. Problem solver.</p>
+      <p>I am a 2nd-year student at Kolhapur Institute of Technology who enjoys learning new skills, solving problems and turning classroom concepts into practical work.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View my projects</a>
+        <a href="#contact" class="btn secondary">Contact me</a>
+      </div>
+    </div>
+
+    <div class="doc-stack" aria-hidden="true">
+      <div class="doc word"><header>Word</header><div class="body"><div class="bar" style="width:70%"></div><div class="bar"></div><div class="bar" style="width:85%"></div><div class="bar" style="width:55%"></div></div></div>
+      <div class="doc excel"><header>Excel</header><div class="body"><div class="cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="doc ppt"><header>PowerPoint</header><div class="body"><div class="slide"></div><div class="bar" style="width:60%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <h2>About me</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I am a motivated student with a strong interest in technology and computer science. I learn by doing: writing code, configuring networks and building small projects.</p>
+        <p>My interests include programming, Data Structures and Algorithms, Computer Networks, web development and problem solving. I am hardworking, responsible and always willing to learn.</p>
+        <p>I believe continuous learning and practical experience are the best way to build strong technical skills for a career in technology.</p>
+      </div>
+      <div class="info-card">
+        <div><strong>Name</strong>Purva Dattatray Adhav</div>
+        <div><strong>Course</strong>Computer Science and Engineering</div>
+        <div><strong>Year</strong>2nd year</div>
+        <div><strong>College</strong>Kolhapur Institute of Technology, Kolhapur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Technical skills</h2>
+      <p>The tools and concepts I work with most.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>Programming</h3><p>Logical thinking and problem solving through C and C++.</p><div class="tags"><span>C</span><span>C++</span><span>Problem solving</span></div></div>
+      <div class="skill-card"><h3>Data Structures and Algorithms</h3><p>Applying structured approaches to programming problems.</p><div class="tags"><span>Data structures</span><span>Sorting</span><span>Graph algorithms</span></div></div>
+      <div class="skill-card"><h3>Computer Networks</h3><p>Core networking concepts and configuration.</p><div class="tags"><span>IP addressing</span><span>VLAN</span><span>Network configuration</span></div></div>
+      <div class="skill-card"><h3>Web development</h3><p>Building responsive pages for the web.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
+      <div class="skill-card"><h3>Microsoft Office</h3><p>Everyday documents, data and presentations.</p><div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span></div></div>
+      <div class="skill-card"><h3>Soft skills</h3><p>Working well with others and finishing what I start.</p><div class="tags"><span>Communication</span><span>Teamwork</span><span>Responsibility</span><span>Willingness to learn</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDIT: tailor the bullet points below to what you actually do in each app -->
+<section id="office" class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <h2>My Microsoft Office skills</h2>
+      <p>Choose an app to see how I use it.</p>
+    </div>
+    <div class="office">
+      <div class="tablist" role="tablist" aria-label="Microsoft Office apps">
+        <button class="tab" role="tab" id="t-word" aria-selected="true" aria-controls="p-word" style="--c:var(--word)">Word</button>
+        <button class="tab" role="tab" id="t-excel" aria-selected="false" aria-controls="p-excel" tabindex="-1" style="--c:var(--excel)">Excel</button>
+        <button class="tab" role="tab" id="t-ppt" aria-selected="false" aria-controls="p-ppt" tabindex="-1" style="--c:var(--ppt)">PowerPoint</button>
+      </div>
+      <div>
+        <div class="panel" role="tabpanel" id="p-word" aria-labelledby="t-word" style="--c:var(--word)">
+          <h3>Word</h3>
+          <p>I use Word to write clear, well-formatted documents for college work.</p>
+          <ul><li>Reports and assignments with headings and styles</li><li>Tables, images and page layout</li><li>Review and proofreading tools</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-excel" aria-labelledby="t-excel" style="--c:var(--excel)" hidden>
+          <h3>Excel</h3>
+          <p>I use Excel to organise data and get answers from it.</p>
+          <ul><li>Formulas and functions</li><li>Sorting, filtering and tables</li><li>Charts that show results clearly</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-ppt" aria-labelledby="t-ppt" style="--c:var(--ppt)" hidden>
+          <h3>PowerPoint</h3>
+          <p>I use PowerPoint to present project ideas simply and clearly.</p>
+          <ul><li>Consistent slide layouts and themes</li><li>Diagrams and visuals instead of long text</li><li>Presenting seminars and project work</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-heading"><h2>Education</h2></div>
+    <div class="timeline">
+      <article class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span>2nd year to present</span>
+          <h3>Bachelor of Engineering</h3>
+          <h4>Computer Science and Engineering</h4>
+          <p>Kolhapur Institute of Technology, Kolhapur</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Projects</h2>
+      <p>Work that shows what I can build.</p>
+    </div>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Personal portfolio website</h3>
+        <p>A responsive website that presents my education, skills, projects and certificates in one place.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </article>
+      <article class="project-card">
+        <h3>Computer networks projects</h3>
+        <p>Academic projects on VLANs, IP addressing and network configuration.</p>
+        <div class="tags"><span>Networking</span><span>VLAN</span><span>IP addressing</span></div>
+      </article>
+      <article class="project-card">
+        <h3>Data Structures and Algorithms</h3>
+        <p>Sorting and graph algorithms implemented in C and C++ to sharpen problem solving.</p>
+        <div class="tags"><span>C</span><span>C++</span><span>DSA</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="certificates" class="section">
+  <div class="container">
+    <div class="section-heading"><h2>Certificates and activities</h2></div>
+    <!-- EDIT: replace these titles with the exact names of your certificates -->
+    <div class="certificate-grid">
+      <div class="certificate-card"><h3>Generative AI</h3><p>LinkedIn</p><a href="https://lnkd.in/p/dg2eSEGK" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
+      <div class="certificate-card"><h3>Quiz certificate</h3><p>Unstop</p><a href="https://lnkd.in/p/dRRmByuk" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
+      <div class="certificate-card"><h3>Deloitte certificate</h3><p>Deloitte</p><a href="https://www.linkedin.com/posts/purva-adhav-0087b0382_share-7491573307398328321-4rvX" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="objective">
+  <div class="container objective-box">
+    <h2>Career objective</h2>
+    <p>I want to build strong technical skills, gain practical experience through projects and internships, and grow into a technology professional who solves real-world problems.</p>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Contact me</h2>
+      <p>Open to learning opportunities, internships and collaboration.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card"><h3>Email</h3><a href="mailto:purvaadhav5@gmail.com">purvaadhav5@gmail.com</a></div>
+      <div class="contact-card"><h3>GitHub</h3><a href="https://github.com/p-adhav" target="_blank" rel="noopener noreferrer">github.com/p-adhav</a></div>
+      <div class="contact-card"><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/purva-adhav-0087b0382" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <p>&copy; <span id="year"></span> Purva Dattatray Adhav. All rights reserved.</p>
+    <a href="#home">Back to top</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+var toggle = document.getElementById('menuToggle');
+var links = document.getElementById('navLinks');
+toggle.addEventListener('click', function () {
+  var open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.addEventListener('click', function () {
+  links.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+});
+
+// Office tabs (click and arrow keys)
+var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+function select(tab) {
+  tabs.forEach(function (t) {
+    var on = t === tab;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+  tab.focus();
+}
+tabs.forEach(function (t, i) {
+  t.addEventListener('click', function () { select(t); });
+  t.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); select(tabs[(i + 1) % tabs.length]); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); select(tabs[(i - 1 + tabs.length) % tabs.length]); }
+  });
+});
+
+// Highlight current section in nav
+var sections = document.querySelectorAll('main section[id]');
+var navAnchors = document.querySelectorAll('.nav-links a');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        navAnchors.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(function (s) { io.observe(s); });
+}
+</script>
+</body>
+</html>
