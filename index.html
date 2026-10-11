@@ -1,418 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Portfolio of Purva Dattatray Adhav, Computer Science and Engineering student at Kolhapur Institute of Technology, Kolhapur.">
-<title>Purva Dattatray Adhav | Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ground:#F3F6FB; --paper:#FFFFFF; --ink:#0E1B33; --muted:#4A5873; --line:#D5DDEA;
-  --word:#1F5FBF; --excel:#1B7A4E; --ppt:#B93E1B; --navy:#0E1B33;
-  --radius:14px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:'Public Sans',system-ui,sans-serif;background:var(--ground);color:var(--ink);line-height:1.65;font-size:17px}
-h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-0.02em}
-a{color:inherit}
-.container{width:min(1120px,100% - 40px);margin-inline:auto}
-:focus-visible{outline:3px solid var(--word);outline-offset:3px;border-radius:4px}
-
-/* Header */
-.header{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.navbar{display:flex;align-items:center;justify-content:space-between;min-height:68px}
-.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;text-decoration:none}
-.logo span{color:var(--ppt)}
-.nav-links{display:flex;gap:26px;list-style:none;font-size:.95rem;font-weight:500}
-.nav-links a{text-decoration:none;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);border-bottom-color:var(--word)}
-.menu-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:8px;width:44px;height:44px;font-size:1.3rem;cursor:pointer;color:var(--ink)}
-
-/* Hero */
-.hero{padding:88px 0 96px}
-.hero-content{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-.hero h1{font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800}
-.hero h1 span{display:block;color:var(--word)}
-.hero h2{font-size:1.35rem;font-weight:600;margin:22px 0 8px}
-.hero-subtitle{color:var(--excel);font-weight:600;margin-bottom:18px}
-.hero-text p{max-width:56ch;color:var(--muted)}
-.hero-text .hero-subtitle{color:var(--excel)}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:10px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
-.btn.primary{background:var(--navy);color:#fff}
-.btn.primary:hover{background:var(--word);transform:translateY(-2px)}
-.btn.secondary{border:2px solid var(--navy)}
-.btn.secondary:hover{background:var(--navy);color:#fff}
-
-/* Hero stack: the one memorable moment */
-.doc-stack{position:relative;height:400px}
-.doc{position:absolute;width:76%;background:var(--paper);border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(14,27,51,.45);overflow:hidden;opacity:0;transform:translateY(24px) rotate(var(--r));animation:land .7s cubic-bezier(.2,.8,.2,1) forwards}
-.doc header{display:flex;align-items:center;gap:10px;padding:10px 14px;color:#fff;font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem}
-.doc .body{padding:16px;display:grid;gap:8px}
-.bar{height:8px;border-radius:4px;background:var(--line)}
-.doc.word{--r:-4deg;top:0;left:0;animation-delay:.1s}
-.doc.word header{background:var(--word)}
-.doc.excel{--r:3deg;top:120px;right:0;animation-delay:.35s}
-.doc.excel header{background:var(--excel)}
-.doc.ppt{--r:-2deg;top:250px;left:6%;animation-delay:.6s}
-.doc.ppt header{background:var(--ppt)}
-.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.cells i{display:block;height:16px;background:#E3F1EA;border-radius:3px}
-.cells i:nth-child(5n){background:#BFE0CF}
-.slide{height:64px;border-radius:6px;background:linear-gradient(90deg,#F6D9CF 0 38%,#FBEDE8 38% 100%)}
-@keyframes land{to{opacity:1;transform:translateY(0) rotate(var(--r))}}
-
-/* Sections */
-.section{padding:88px 0}
-.section.alt{background:var(--paper);border-block:1px solid var(--line)}
-.section-heading{margin-bottom:44px;max-width:640px}
-.section-heading h2{font-size:clamp(2rem,4vw,2.8rem)}
-.section-heading p{margin-top:12px;color:var(--muted)}
-
-.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
-.about-grid p{color:var(--muted);margin-bottom:16px;max-width:62ch}
-.info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px}
-.info-card div{padding:16px 0;border-bottom:1px solid var(--line)}
-.info-card div:last-child{border-bottom:0}
-.info-card strong{display:block;font-family:'Sora',sans-serif;font-size:.85rem;color:var(--word)}
-
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-.skill-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-.alt .skill-card{background:var(--ground)}
-.skill-card h3{font-size:1.1rem;margin-bottom:10px}
-.skill-card p{color:var(--muted);font-size:.97rem}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.tags span{font-size:.85rem;font-weight:500;padding:5px 12px;border-radius:99px;background:#E4ECF9;color:#17428A}
-
-/* Office tabs: responds to the person's click */
-.office{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:stretch}
-.tablist{display:grid;gap:10px;align-content:start}
-.tab{display:flex;align-items:center;gap:12px;text-align:left;min-height:56px;padding:0 18px;border:1px solid var(--line);border-radius:12px;background:var(--paper);font:600 1rem 'Sora',sans-serif;color:var(--ink);cursor:pointer}
-.tab::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--c)}
-.tab[aria-selected="true"]{background:var(--c);color:#fff;border-color:var(--c)}
-.tab[aria-selected="true"]::before{background:#fff}
-.panel{background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:var(--radius);padding:34px}
-.panel[hidden]{display:none}
-.panel h3{font-size:1.6rem;margin-bottom:12px}
-.panel p{color:var(--muted);max-width:60ch}
-.panel ul{margin:18px 0 0 20px;color:var(--ink)}
-.panel li{margin-bottom:6px}
-
-/* Timeline */
-.timeline{border-left:3px solid var(--word);padding-left:28px;max-width:640px}
-.timeline-item{position:relative}
-.timeline-dot{position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:4px solid var(--word)}
-.timeline-content span{font-weight:600;color:var(--word);font-size:.92rem}
-.timeline-content h3{font-size:1.4rem;margin:6px 0 2px}
-.timeline-content h4{font-size:1.05rem;font-weight:600;color:var(--excel);margin-bottom:6px}
-.timeline-content p{color:var(--muted)}
-
-/* Projects */
-.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.project-card{background:var(--navy);color:#E8EEF9;border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;border-top:6px solid var(--c,var(--word))}
-.project-card:nth-child(2){--c:var(--excel)}
-.project-card:nth-child(3){--c:var(--ppt)}
-.project-card h3{color:#fff;font-size:1.35rem;margin-bottom:12px}
-.project-card p{color:#C3CFE6;font-size:.98rem;flex:1}
-.project-card .tags span{background:rgba(255,255,255,.12);color:#fff}
-
-/* Certificates */
-.certificate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.certificate-card{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--word);border-radius:var(--radius);padding:22px 24px}
-.certificate-card:nth-child(3n+2){border-left-color:var(--excel)}
-.certificate-card:nth-child(3n){border-left-color:var(--ppt)}
-.certificate-card h3{font-size:1.05rem;margin-bottom:6px}
-.certificate-card p{color:var(--muted);font-size:.95rem}
-.certificate-card a{display:inline-block;margin-top:10px;font-weight:600;color:var(--word)}
-.certificate-card span{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--muted)}
-
-/* Objective */
-.objective{padding:0 0 88px}
-.objective-box{background:var(--word);color:#fff;border-radius:20px;padding:64px 56px}
-.objective-box h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px}
-.objective-box p{max-width:62ch;color:#E6EEFB;font-size:1.1rem}
-
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-.contact-card{background:var(--ground);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-.contact-card h3{font-size:1.1rem;margin-bottom:10px}
-.contact-card a{font-weight:600;color:var(--word);word-break:break-word}
-
-footer{background:var(--navy);color:#C3CFE6;padding:30px 0;font-size:.95rem}
-.footer-content{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-footer a{color:#fff}
-
-@media (max-width:860px){
-  .hero-content,.about-grid,.office{grid-template-columns:1fr}
-  .doc-stack{height:380px;max-width:420px}
-  .menu-toggle{display:block}
-  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ground);border-bottom:1px solid var(--line);padding:8px 20px 16px}
-  .nav-links.open{display:flex}
-  .nav-links a{display:block;padding:12px 0}
-  .tablist{grid-template-columns:repeat(3,1fr)}
-  .tab{padding:0 12px;font-size:.9rem}
-  .objective-box{padding:44px 28px}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .doc{animation:none;opacity:1;transform:rotate(var(--r))}
-  .btn{transition:none}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Purva Dattatray Adhav, Computer Science and Engineering student at Kolhapur Institute of Technology, Kolhapur.">
+  <meta name="theme-color" content="#090b10">
+  <title>Purva Dattatray Adhav | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090b10;--bg-soft:#0f131b;--panel:#121722;--panel-2:#171e2b;--text:#f4f7fb;--muted:#a2adbd;--line:rgba(190,207,229,.13);--mint:#62f5cf;--red:#ff4d67;--red-soft:#ff7588;--violet:#a99bff;--blue:#83b8ff;--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.25)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 12% 10%,rgba(98,245,207,.10),transparent 32%),radial-gradient(ellipse at 88% 25%,rgba(169,155,255,.13),transparent 35%),radial-gradient(ellipse at 52% 78%,rgba(255,77,103,.075),transparent 38%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,auto,42px 42px,42px 42px}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:4px}button{font:inherit}.container{width:min(1120px,calc(100% - 40px));margin-inline:auto}.header{position:sticky;top:0;z-index:100;background:rgba(9,11,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font:700 1.65rem 'Space Grotesk',sans-serif;letter-spacing:-1px}.logo span{color:var(--mint)}.nav-links{display:flex;align-items:center;gap:23px;list-style:none}.nav-links a{font-size:.88rem;color:var(--muted);transition:color .2s}.nav-links a:hover{color:var(--red-soft)}.menu-toggle{display:none;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:7px 12px;font-size:1.2rem}.hero{min-height:calc(100vh - 78px);display:flex;align-items:center;position:relative;padding:95px 0 100px}.hero-content{display:grid;grid-template-columns:1.4fr .8fr;align-items:center;gap:70px}.eyebrow{color:var(--mint);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:15px}.hero h1{font:700 clamp(2.8rem,6vw,5.6rem)/1.04 'Space Grotesk',sans-serif;letter-spacing:-.065em;max-width:720px}.hero h1 span{display:block;color:transparent;background:linear-gradient(100deg,var(--mint),var(--blue) 38%,var(--violet) 68%,var(--red));background-clip:text;-webkit-background-clip:text}.hero h2{font:500 clamp(1.05rem,2vw,1.45rem) 'Space Grotesk',sans-serif;color:#d5deeb;margin-top:24px}.hero-subtitle{color:var(--mint);font-size:.94rem;margin-top:12px}.hero-subtitle span{color:var(--violet);padding:0 5px}.hero-description{color:var(--muted);max-width:620px;margin-top:24px;font-size:1rem}.hero-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:13px;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s,border-color .2s}.btn:hover{transform:translateY(-3px)}.btn.primary{background:var(--mint);color:#07110f;box-shadow:0 8px 28px rgba(98,245,207,.17)}.btn.secondary{border:1px solid var(--line);background:rgba(255,255,255,.025)}.profile-card{position:relative;padding:36px 28px;text-align:center;border:1px solid rgba(255,77,103,.30);border-radius:28px;background:linear-gradient(145deg,rgba(23,30,43,.96),rgba(14,18,27,.92));box-shadow:var(--shadow);overflow:hidden}.profile-card:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:rgba(255,77,103,.16);filter:blur(60px);top:-90px;right:-50px}.profile-circle{width:120px;height:120px;margin:0 auto 22px;display:grid;place-items:center;border-radius:35px;transform:rotate(-5deg);font:700 2.7rem 'Space Grotesk',sans-serif;color:#07110f;background:linear-gradient(135deg,var(--mint),var(--blue) 52%,var(--red));box-shadow:0 12px 40px rgba(255,77,103,.18)}.profile-card h3{font:600 1.3rem 'Space Grotesk',sans-serif;position:relative}.profile-card>p{color:var(--muted);font-size:.9rem;margin-top:4px}.profile-status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:#d6e1eb;font-size:.75rem}.status-dot{width:7px;height:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 12px var(--mint)}.profile-mini-tags{display:flex;justify-content:center;gap:8px;margin-top:20px}.profile-mini-tags span,.tags span{font-size:.75rem;padding:6px 10px;border:1px solid var(--line);border-radius:8px;color:#dce5ef;background:rgba(255,255,255,.025)}.scroll-cue{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);color:var(--mint);font-size:1.5rem;animation:bob 1.8s infinite}@keyframes bob{50%{transform:translate(-50%,6px)}}.section{padding:100px 0}.alt{background:linear-gradient(180deg,rgba(18,23,34,.65),rgba(14,18,27,.65));border-block:1px solid rgba(255,255,255,.035)}.section-heading{text-align:center;max-width:700px;margin:0 auto 48px}.section-heading .eyebrow{margin-bottom:10px}.section-heading h2,.objective-box h2{font:700 clamp(2rem,4vw,3.15rem)/1.2 'Space Grotesk',sans-serif;letter-spacing:-.045em}.section-heading h2 span{color:var(--mint)}.section-heading>p:last-child{color:var(--muted);margin-top:12px}.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}.about-copy,.info-card,.feature-card,.timeline-content,.skill-card,.project-card,.certificate-card,.contact-card{background:linear-gradient(145deg,rgba(21,27,39,.92),rgba(14,18,27,.94));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 40px rgba(0,0,0,.12)}.about-copy{padding:30px;color:var(--muted)}.about-copy p+p{margin-top:16px}.info-card{padding:12px 26px}.info-card div{display:flex;flex-direction:column;padding:15px 0;border-bottom:1px solid var(--line)}.info-card div:last-child{border-bottom:0}.info-card strong{color:var(--mint);font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}.info-card span{margin-top:3px;color:#e4eaf2}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.feature-card{padding:26px 22px;transition:transform .25s,border-color .25s}.feature-card:hover,.skill-card:hover,.project-card:hover,.certificate-card:hover,.contact-card:hover{transform:translateY(-5px);border-color:rgba(98,245,207,.42)}.feature-icon{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:rgba(98,245,207,.1);color:var(--mint);font-size:1.45rem;margin-bottom:19px}.feature-card h3,.skill-card h3,.project-card h3,.certificate-card h3,.contact-card h3,.timeline-content h3{font:600 1.12rem 'Space Grotesk',sans-serif}.feature-card p,.project-card p,.certificate-card>p:not(.certificate-platform),.timeline-content p{color:var(--muted);font-size:.9rem;margin-top:10px}.timeline{max-width:760px;margin:auto;position:relative;padding-left:28px}.timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:15px;width:2px;background:linear-gradient(var(--mint),var(--violet))}.timeline-item{position:relative;margin-bottom:22px}.timeline-dot{position:absolute;left:-27px;top:27px;width:14px;height:14px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px rgba(98,245,207,.12)}.timeline-content{padding:28px}.timeline-label{color:var(--mint);font-size:.77rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.timeline-content h3{font-size:1.3rem;margin-top:9px}.timeline-content h4{color:#d9e1ed;font-weight:500;margin-top:4px}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.skill-card{padding:25px}.skill-card h3{margin-bottom:17px}.tags{display:flex;gap:8px;flex-wrap:wrap}.tags span{color:#c8d2e1}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project-card{padding:26px;transition:transform .25s,border-color .25s}.project-topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:24px}.project-number{font:700 1.5rem 'Space Grotesk',sans-serif;color:var(--red)}.project-type{font-size:.7rem;color:var(--red-soft);background:rgba(169,155,255,.09);border:1px solid rgba(255,77,103,.24);padding:5px 8px;border-radius:8px}.project-card h3{font-size:1.2rem}.project-card .tags{margin-top:20px}.certificate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.certificate-card{padding:24px;transition:transform .25s,border-color .25s}.certificate-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:rgba(98,245,207,.1);color:var(--mint);font:700 1rem 'Space Grotesk',sans-serif;margin-bottom:18px}.unstop-icon{background:rgba(255,77,103,.13);color:var(--red-soft)}.deloitte-icon{background:rgba(131,184,255,.12);color:var(--blue)}.certificate-platform{font-size:.69rem;font-weight:700;letter-spacing:.14em;color:var(--muted);margin-bottom:5px}.certificate-card h3{min-height:54px}.certificate-link{display:inline-flex;gap:8px;align-items:center;color:var(--red-soft);font-size:.85rem;font-weight:700;margin-top:20px}.certificate-link:hover{text-decoration:underline}.certificate-note{display:block;color:var(--muted);font-size:.8rem;margin-top:20px}.section-footnote{text-align:center;color:var(--muted);font-size:.8rem;margin-top:25px}.objective-section{padding-top:70px;padding-bottom:70px}.objective-box{position:relative;overflow:hidden;text-align:center;padding:55px 30px;border-radius:28px;border:1px solid rgba(98,245,207,.25);background:radial-gradient(ellipse at 10% 0%,rgba(98,245,207,.13),transparent 42%),radial-gradient(ellipse at 100% 100%,rgba(169,155,255,.15),transparent 42%),radial-gradient(ellipse at 50% 100%,rgba(255,77,103,.12),transparent 48%),#111722}.objective-box h2{margin-bottom:14px}.objective-box>p:not(.eyebrow){color:var(--muted);max-width:720px;margin:0 auto 25px}.light-btn{background:var(--mint);color:#07110f}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.contact-card{text-align:center;padding:28px 18px;transition:transform .25s,border-color .25s}.contact-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;margin:0 auto 15px;background:rgba(255,77,103,.12);color:var(--red-soft);font-size:1.2rem}.contact-card h3{margin-bottom:8px}.contact-card a{font-size:.85rem;color:var(--mint);overflow-wrap:anywhere}.contact-card a:hover{text-decoration:underline}.footer{border-top:1px solid var(--line);padding:24px 0;background:#07090d}.footer-content{display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.footer-content a{color:var(--red-soft)}
+    @media(max-width:950px){.nav-links{gap:13px}.nav-links a{font-size:.8rem}.hero-content{gap:35px}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.container{width:min(100% - 30px,600px)}.navbar{min-height:70px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:15px;right:15px;flex-direction:column;align-items:stretch;gap:0;padding:10px;background:#111722;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.nav-links.open{display:flex}.nav-links a{display:block;padding:10px 12px;font-size:.95rem}.hero{min-height:auto;padding:78px 0 85px}.hero-content{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(2.8rem,12vw,4.5rem)}.profile-card{max-width:460px;width:100%;margin:auto}.section{padding:75px 0}.about-grid,.skills-grid,.project-grid,.certificate-grid,.contact-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.section-heading{margin-bottom:35px}.certificate-card h3{min-height:0}.objective-box{padding:40px 22px}.footer-content{flex-direction:column;text-align:center;gap:8px}}
+    @media(max-width:420px){.feature-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.profile-card{padding:30px 18px}.section-heading h2{font-size:2.15rem}.footer-content{font-size:.76rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
 </head>
 <body>
+  <header class="header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="logo">Purva<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header class="header">
-  <nav class="navbar container" aria-label="Main">
-    <a href="#home" class="logo">Purva<span>.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#office">Office</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-
-<section id="home" class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <h1>Purva <span>Dattatray Adhav</span></h1>
-      <h2>Computer Science and Engineering student</h2>
-      <p class="hero-subtitle">Aspiring software developer. C and C++ programmer. Problem solver.</p>
-      <p>I am a 2nd-year student at Kolhapur Institute of Technology who enjoys learning new skills, solving problems and turning classroom concepts into practical work.</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn primary">View my projects</a>
-        <a href="#contact" class="btn secondary">Contact me</a>
-      </div>
-    </div>
-
-    <div class="doc-stack" aria-hidden="true">
-      <div class="doc word"><header>Word</header><div class="body"><div class="bar" style="width:70%"></div><div class="bar"></div><div class="bar" style="width:85%"></div><div class="bar" style="width:55%"></div></div></div>
-      <div class="doc excel"><header>Excel</header><div class="body"><div class="cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-      <div class="doc ppt"><header>PowerPoint</header><div class="body"><div class="slide"></div><div class="bar" style="width:60%"></div></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section alt">
-  <div class="container">
-    <div class="section-heading">
-      <h2>About me</h2>
-    </div>
-    <div class="about-grid">
-      <div>
-        <p>I am a motivated student with a strong interest in technology and computer science. I learn by doing: writing code, configuring networks and building small projects.</p>
-        <p>My interests include programming, Data Structures and Algorithms, Computer Networks, web development and problem solving. I am hardworking, responsible and always willing to learn.</p>
-        <p>I believe continuous learning and practical experience are the best way to build strong technical skills for a career in technology.</p>
-      </div>
-      <div class="info-card">
-        <div><strong>Name</strong>Purva Dattatray Adhav</div>
-        <div><strong>Course</strong>Computer Science and Engineering</div>
-        <div><strong>Year</strong>2nd year</div>
-        <div><strong>College</strong>Kolhapur Institute of Technology, Kolhapur</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Technical skills</h2>
-      <p>The tools and concepts I work with most.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card"><h3>Programming</h3><p>Logical thinking and problem solving through C and C++.</p><div class="tags"><span>C</span><span>C++</span><span>Problem solving</span></div></div>
-      <div class="skill-card"><h3>Data Structures and Algorithms</h3><p>Applying structured approaches to programming problems.</p><div class="tags"><span>Data structures</span><span>Sorting</span><span>Graph algorithms</span></div></div>
-      <div class="skill-card"><h3>Computer Networks</h3><p>Core networking concepts and configuration.</p><div class="tags"><span>IP addressing</span><span>VLAN</span><span>Network configuration</span></div></div>
-      <div class="skill-card"><h3>Web development</h3><p>Building responsive pages for the web.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
-      <div class="skill-card"><h3>Microsoft Office</h3><p>Everyday documents, data and presentations.</p><div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span></div></div>
-      <div class="skill-card"><h3>Soft skills</h3><p>Working well with others and finishing what I start.</p><div class="tags"><span>Communication</span><span>Teamwork</span><span>Responsibility</span><span>Willingness to learn</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- EDIT: tailor the bullet points below to what you actually do in each app -->
-<section id="office" class="section alt">
-  <div class="container">
-    <div class="section-heading">
-      <h2>My Microsoft Office skills</h2>
-      <p>Choose an app to see how I use it.</p>
-    </div>
-    <div class="office">
-      <div class="tablist" role="tablist" aria-label="Microsoft Office apps">
-        <button class="tab" role="tab" id="t-word" aria-selected="true" aria-controls="p-word" style="--c:var(--word)">Word</button>
-        <button class="tab" role="tab" id="t-excel" aria-selected="false" aria-controls="p-excel" tabindex="-1" style="--c:var(--excel)">Excel</button>
-        <button class="tab" role="tab" id="t-ppt" aria-selected="false" aria-controls="p-ppt" tabindex="-1" style="--c:var(--ppt)">PowerPoint</button>
-      </div>
-      <div>
-        <div class="panel" role="tabpanel" id="p-word" aria-labelledby="t-word" style="--c:var(--word)">
-          <h3>Word</h3>
-          <p>I use Word to write clear, well-formatted documents for college work.</p>
-          <ul><li>Reports and assignments with headings and styles</li><li>Tables, images and page layout</li><li>Review and proofreading tools</li></ul>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">HELLO, I'M</p>
+          <h1>Purva <span>Dattatray Adhav</span></h1>
+          <h2>Computer Science &amp; Engineering Student</h2>
+          <p class="hero-subtitle">Aspiring Software Developer <span>·</span> C/C++ Programmer <span>·</span> Problem Solver</p>
+          <p class="hero-description">I am a motivated and enthusiastic student with an interest in technology and computer science. I enjoy learning new skills, solving problems, and improving my knowledge through practical experience.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View My Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+          </div>
         </div>
-        <div class="panel" role="tabpanel" id="p-excel" aria-labelledby="t-excel" style="--c:var(--excel)" hidden>
-          <h3>Excel</h3>
-          <p>I use Excel to organise data and get answers from it.</p>
-          <ul><li>Formulas and functions</li><li>Sorting, filtering and tables</li><li>Charts that show results clearly</li></ul>
+        <aside class="profile-card" aria-label="Profile summary">
+          <div class="profile-circle">PA</div>
+          <h3>Purva Dattatray Adhav</h3>
+          <p>Computer Science &amp; Engineering</p>
+          <span class="profile-status"><span class="status-dot"></span> Open to Learning &amp; Opportunities</span>
+          <div class="profile-mini-tags"><span>C/C++</span><span>DSA</span><span>Web</span></div>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About section">↓</a>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">GET TO KNOW ME</p>
+          <h2>About <span>Me</span></h2>
+          <p>A little about my learning journey and interests.</p>
         </div>
-        <div class="panel" role="tabpanel" id="p-ppt" aria-labelledby="t-ppt" style="--c:var(--ppt)" hidden>
-          <h3>PowerPoint</h3>
-          <p>I use PowerPoint to present project ideas simply and clearly.</p>
-          <ul><li>Consistent slide layouts and themes</li><li>Diagrams and visuals instead of long text</li><li>Presenting seminars and project work</li></ul>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I am a motivated and enthusiastic student with an interest in technology and computer science. I enjoy learning new skills, solving problems, and improving my knowledge through practical experience.</p>
+            <p>I am hardworking, responsible, and always willing to learn and grow. My interests include programming, Data Structures and Algorithms, Computer Networks, web development and problem solving.</p>
+            <p>I believe continuous learning and practical experience are important for building strong technical skills and preparing for a career in technology.</p>
+          </div>
+          <div class="info-card">
+            <div><strong>Name</strong><span>Purva Dattatray Adhav</span></div>
+            <div><strong>Course</strong><span>Computer Science &amp; Engineering</span></div>
+            <div><strong>Year</strong><span>2nd Year</span></div>
+            <div><strong>College</strong><span>Kolhapur Institute of Technology, Kolhapur</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="education" class="section">
-  <div class="container">
-    <div class="section-heading"><h2>Education</h2></div>
-    <div class="timeline">
-      <article class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span>2nd year to present</span>
-          <h3>Bachelor of Engineering</h3>
-          <h4>Computer Science and Engineering</h4>
-          <p>Kolhapur Institute of Technology, Kolhapur</p>
+    <section class="section highlights alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY STRENGTHS</p>
+          <h2>What I <span>Bring</span></h2>
         </div>
-      </article>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon">⌘</div><h3>Programming</h3><p>Developing logical thinking and programming skills with C and C++.</p></article>
+          <article class="feature-card"><div class="feature-icon">◇</div><h3>Problem Solving</h3><p>Learning Data Structures and Algorithms and applying structured approaches.</p></article>
+          <article class="feature-card"><div class="feature-icon">◎</div><h3>Networking</h3><p>Exploring IP addressing, VLANs and basic network configuration.</p></article>
+          <article class="feature-card"><div class="feature-icon">↗</div><h3>Continuous Learning</h3><p>Building knowledge through coursework, projects and new learning opportunities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY JOURNEY</p>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-label">Currently Studying · 2nd Year</span>
+              <h3>Bachelor of Engineering</h3>
+              <h4>Computer Science and Engineering</h4>
+              <p>Kolhapur Institute of Technology, Kolhapur</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">WHAT I KNOW</p>
+          <h2>Technical <span>Skills</span></h2>
+          <p>Technologies and skills I am developing through learning and practice.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>Programming</h3><div class="tags"><span>C</span><span>C++</span><span>Problem Solving</span></div></article>
+          <article class="skill-card"><h3>Data Structures &amp; Algorithms</h3><div class="tags"><span>Data Structures</span><span>Sorting</span><span>Graph Algorithms</span><span>Algorithms</span></div></article>
+          <article class="skill-card"><h3>Computer Networks</h3><div class="tags"><span>IP Addressing</span><span>VLAN</span><span>Network Configuration</span><span>Networking Basics</span></div></article>
+          <article class="skill-card"><h3>Web Development</h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript Basics</span></div></article>
+          <article class="skill-card"><h3>Microsoft Office</h3><div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span></div></article>
+          <article class="skill-card"><h3>Soft Skills</h3><div class="tags"><span>Communication</span><span>Teamwork</span><span>Responsibility</span><span>Willingness to Learn</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY WORK</p>
+          <h2>Featured <span>Projects</span></h2>
+          <p>Academic and personal work that supports my technical learning.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-topline"><span class="project-number">01</span><span class="project-type">Web Development</span></div>
+            <h3>Personal Portfolio Website</h3>
+            <p>Designed and developed a responsive personal portfolio to present my education, technical skills, projects and achievements in a professional way.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-number">02</span><span class="project-type">Networking</span></div>
+            <h3>Computer Networks Projects</h3>
+            <p>Practised networking concepts including VLANs, IP addressing and network configuration through academic exercises and projects.</p>
+            <div class="tags"><span>Networking</span><span>VLAN</span><span>IP Addressing</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-number">03</span><span class="project-type">Programming</span></div>
+            <h3>Data Structures &amp; Algorithms</h3>
+            <p>Studied and implemented sorting and graph algorithms using C and C++, strengthening algorithmic thinking and problem-solving skills.</p>
+            <div class="tags"><span>C</span><span>C++</span><span>DSA</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">LEARNING &amp; ACHIEVEMENTS</p>
+          <h2>Certificates <span>&amp; Activities</span></h2>
+          <p>Explore my certificates and shared learning achievements.</p>
+        </div>
+        <div class="certificate-grid">
+          <article class="certificate-card">
+            <div class="certificate-icon">in</div>
+            <p class="certificate-platform">LINKEDIN</p>
+            <h3>LinkedIn Certificate</h3>
+            <p>Professional learning and development</p>
+            <a href="https://lnkd.in/p/dg2eSEGK" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-icon unstop-icon">U</div>
+            <p class="certificate-platform">UNSTOP</p>
+            <h3>Unstop Certificate</h3>
+            <p>Learning and achievement</p>
+            <a href="https://lnkd.in/p/dRRmByuk" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-icon deloitte-icon">D</div>
+            <p class="certificate-platform">DELOITTE</p>
+            <h3>Deloitte Certificate</h3>
+            <p>Shared learning achievement</p>
+            <a href="https://www.linkedin.com/posts/purva-adhav-0087b0382_share-7491573307398328321-4rvX?utm_source=social_share_send&amp;utm_medium=android_app&amp;rcm=ACoAAF5yLwgBXxZrbqiZf3WT321_6w3Au6dgNfs&amp;utm_campaign=whatsapp" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-icon">C++</div>
+            <p class="certificate-platform">PROGRAMMING</p>
+            <h3>C / C++ Programming</h3>
+            <p>Programming certificate</p>
+            <span class="certificate-note">Certificate details available on request</span>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-icon">DSA</div>
+            <p class="certificate-platform">COMPUTER SCIENCE</p>
+            <h3>Data Structures &amp; Algorithms</h3>
+            <p>DSA certificate</p>
+            <span class="certificate-note">Certificate details available on request</span>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-icon">MS</div>
+            <p class="certificate-platform">PRODUCTIVITY</p>
+            <h3>Microsoft Office / Microsoft Learn</h3>
+            <p>Microsoft learning</p>
+            <span class="certificate-note">Certificate details available on request</span>
+          </article>
+        </div>
+        <p class="section-footnote">For certificates without a link, add the official verification URL when available.</p>
+      </div>
+    </section>
+
+    <section class="section objective-section">
+      <div class="container">
+        <div class="objective-box">
+          <p class="eyebrow">MY GOAL</p>
+          <h2>Career Objective</h2>
+          <p>My goal is to build strong technical skills, gain practical experience through projects and internships, and become a skilled technology professional capable of solving real-world problems.</p>
+          <a href="#contact" class="btn light-btn">Let's Connect</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Contact <span>Me</span></h2>
+          <p>Feel free to connect with me about learning, projects and opportunities.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card"><div class="contact-icon">✉</div><h3>Email</h3><a href="mailto:purvaadhav5@gmail.com">purvaadhav5@gmail.com</a></article>
+          <article class="contact-card"><div class="contact-icon">⌘</div><h3>GitHub</h3><a href="https://github.com/p-adhav" target="_blank" rel="noopener noreferrer">View My GitHub ↗</a></article>
+          <article class="contact-card"><div class="contact-icon">in</div><h3>LinkedIn</h3><a href="https://www.linkedin.com/posts/purva-adhav-0087b0382_share-7491573307398328321-4rvX" target="_blank" rel="noopener noreferrer">View LinkedIn Post ↗</a></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Purva Dattatray Adhav. Built with care.</p>
+      <a href="#home">Back to top ↑</a>
     </div>
-  </div>
-</section>
-
-<section id="projects" class="section alt">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Projects</h2>
-      <p>Work that shows what I can build.</p>
-    </div>
-    <div class="project-grid">
-      <article class="project-card">
-        <h3>Personal portfolio website</h3>
-        <p>A responsive website that presents my education, skills, projects and certificates in one place.</p>
-        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-      </article>
-      <article class="project-card">
-        <h3>Computer networks projects</h3>
-        <p>Academic projects on VLANs, IP addressing and network configuration.</p>
-        <div class="tags"><span>Networking</span><span>VLAN</span><span>IP addressing</span></div>
-      </article>
-      <article class="project-card">
-        <h3>Data Structures and Algorithms</h3>
-        <p>Sorting and graph algorithms implemented in C and C++ to sharpen problem solving.</p>
-        <div class="tags"><span>C</span><span>C++</span><span>DSA</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="certificates" class="section">
-  <div class="container">
-    <div class="section-heading"><h2>Certificates and activities</h2></div>
-    <!-- EDIT: replace these titles with the exact names of your certificates -->
-    <div class="certificate-grid">
-      <div class="certificate-card"><h3>Generative AI</h3><p>LinkedIn</p><a href="https://lnkd.in/p/dg2eSEGK" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
-      <div class="certificate-card"><h3>Quiz certificate</h3><p>Unstop</p><a href="https://lnkd.in/p/dRRmByuk" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
-      <div class="certificate-card"><h3>Deloitte certificate</h3><p>Deloitte</p><a href="https://www.linkedin.com/posts/purva-adhav-0087b0382_share-7491573307398328321-4rvX" target="_blank" rel="noopener noreferrer">View on LinkedIn</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="objective">
-  <div class="container objective-box">
-    <h2>Career objective</h2>
-    <p>I want to build strong technical skills, gain practical experience through projects and internships, and grow into a technology professional who solves real-world problems.</p>
-  </div>
-</section>
-
-<section id="contact" class="section alt">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Contact me</h2>
-      <p>Open to learning opportunities, internships and collaboration.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card"><h3>Email</h3><a href="mailto:purvaadhav5@gmail.com">purvaadhav5@gmail.com</a></div>
-      <div class="contact-card"><h3>GitHub</h3><a href="https://github.com/p-adhav" target="_blank" rel="noopener noreferrer">github.com/p-adhav</a></div>
-      <div class="contact-card"><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/purva-adhav-0087b0382" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container footer-content">
-    <p>&copy; <span id="year"></span> Purva Dattatray Adhav. All rights reserved.</p>
-    <a href="#home">Back to top</a>
-  </div>
-</footer>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Mobile menu
-var toggle = document.getElementById('menuToggle');
-var links = document.getElementById('navLinks');
-toggle.addEventListener('click', function () {
-  var open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', open);
-});
-links.addEventListener('click', function () {
-  links.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-});
-
-// Office tabs (click and arrow keys)
-var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-function select(tab) {
-  tabs.forEach(function (t) {
-    var on = t === tab;
-    t.setAttribute('aria-selected', on);
-    t.tabIndex = on ? 0 : -1;
-    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-  });
-  tab.focus();
-}
-tabs.forEach(function (t, i) {
-  t.addEventListener('click', function () { select(t); });
-  t.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); select(tabs[(i + 1) % tabs.length]); }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); select(tabs[(i - 1 + tabs.length) % tabs.length]); }
-  });
-});
-
-// Highlight current section in nav
-var sections = document.querySelectorAll('main section[id]');
-var navAnchors = document.querySelectorAll('.nav-links a');
-if ('IntersectionObserver' in window) {
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) {
-        navAnchors.forEach(function (a) {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
-        });
-      }
+  </footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(function (s) { io.observe(s); });
-}
-</script>
+    navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
